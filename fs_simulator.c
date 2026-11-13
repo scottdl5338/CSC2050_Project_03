@@ -32,7 +32,7 @@ int load_inodes(entry_node inodes[])
   if(entry.inode >= MAX_INODES ||
      (entry.ftype != 'd' && entry.ftype != 'f'))
   {
-   fprintf(stderr, "Invalid inode entry %u ignored\n", entry.inode);
+   printf("Invalid inode entry %u ignored\n", entry.inode);
    continue;
   }
 
@@ -256,7 +256,7 @@ int main(int argc, char* argv[])
  //Takes in 1 argument after the file
  if(argc != 2)
  {
-  fprintf(stderr, "usage: %s <fs_directory>\n", argv[0]);
+  printf("Need exaclty 1 argument\n", argv[0]);
   return 1;
  }
 
@@ -283,7 +283,7 @@ int main(int argc, char* argv[])
  //Inode 0 is the root so it has to be a directory
  if(inodes[0].ftype != 'd')
  {
-  fprintf(stderr, "Root inode 0 is not a directory\n");
+  printf("Root inode 0 is not a directory\n");
   return 1;
  }
 
